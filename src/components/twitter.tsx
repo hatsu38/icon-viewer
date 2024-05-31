@@ -12,7 +12,7 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
   const share = randomInt();
 
   return (
-    <div className="w-[360px] border-b border-gray-200 dark:border-gray-700 pb-4">
+    <div className="w-[320px] md:w-[400px]  border-b border-gray-200 dark:border-gray-700 pb-4">
       <div className="flex items-start space-x-4">
         <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-300 dark:border-gray-700 flex-shrink-0">
           <Image src={imageSrc} alt="Twitter Icon" width={48} height={48} />
@@ -25,7 +25,7 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
               <span className="text-gray-500 dark:text-gray-400 ml-2">· 15 {t("hours")}</span>
             </div>
           </div>
-          <p className="mt-2 word-break truncate-3-lines max-w-[300px]">
+          <p className="mt-2 word-break truncate-3-lines max-w-[280px] md:max-w-[300px]">
             {postText}
           </p>
         </div>

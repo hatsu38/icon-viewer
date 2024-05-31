@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Icon } from "./icon";
 import { randomUsername, randomPostText, randomInt } from "@/utils/random";
+import { useTranslation } from 'next-i18next';
 
 export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
+  const { t } = useTranslation('common');
   const name = randomUsername();
   const postText = randomPostText();
   const like = randomInt();
@@ -20,9 +22,8 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
             <div>
               <span className="font-semibold truncate">{name}</span>
               <span className="text-gray-500 dark:text-gray-400 ml-2 truncate">@{name}</span>
-              <span className="text-gray-500 dark:text-gray-400 ml-2">· 15時間</span>
+              <span className="text-gray-500 dark:text-gray-400 ml-2">· 15 {t("hours")}</span>
             </div>
-            <span className="text-gray-500 dark:text-gray-400 text-sm">1h</span>
           </div>
           <p className="mt-2 word-break truncate-3-lines max-w-[300px]">
             {postText}

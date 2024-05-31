@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { Icon } from "./icon";
-import { randomUsername, randomPostText, randomInt } from "@/_utils/random";
+import { randomUsername, randomPostText, randomInt } from "@/utils/random";
 
 export const Facebook = ({ imageSrc }: { imageSrc: string }) => {
   const name = randomUsername();
   const postText = randomPostText();
   const like = randomInt();
   return (
-    <div>
+    <div className="w-[400px]">
       <div className="w-full flex items-start space-x-4">
         <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-700">
           <Image src={imageSrc} alt="Facebook Icon" width={48} height={48} />

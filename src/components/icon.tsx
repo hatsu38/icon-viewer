@@ -13,6 +13,7 @@ import {
 import { FiBold, FiSend } from "react-icons/fi";
 import { HiOutlineEyeOff, HiOutlineEye } from "react-icons/hi";
 import { IoIosStats } from "react-icons/io";
+
 import {
   IoHomeOutline,
   IoHome,
@@ -61,6 +62,8 @@ import {
   IoChatboxOutline,
   IoVolumeLowOutline,
   IoVolumeLow,
+  IoChevronUpSharp,
+  IoChevronDownSharp,
 } from "react-icons/io5";
 import { RiDownloadCloudLine } from "react-icons/ri";
 import { TbLoaderQuarter } from "react-icons/tb";
@@ -120,6 +123,8 @@ export const ICONS = [
   "ioChatboxOutline",
   "ioVolumeLowOutline",
   "ioVolumeLow",
+  "ioChevronUpSharp",
+  "ioChevronDownSharp",
   "hiOutlineEye",
   "hiOutlineEyeOff",
   "aiFillStar",
@@ -218,6 +223,8 @@ export const Icon: FC<IconPropsType> = ({
     ioChatboxOutline: <IoChatboxOutline {...iconProps} />,
     ioVolumeLowOutline: <IoVolumeLowOutline {...iconProps} />,
     ioVolumeLow: <IoVolumeLow {...iconProps} />,
+    ioChevronUpSharp: <IoChevronUpSharp {...iconProps} />,
+    ioChevronDownSharp: <IoChevronDownSharp {...iconProps} />,
     hiOutlineEye: <HiOutlineEye {...iconProps} />,
     hiOutlineEyeOff: <HiOutlineEyeOff {...iconProps} />,
     fileImage: <BsFileImageFill {...iconProps} />,

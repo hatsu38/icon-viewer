@@ -1,19 +1,19 @@
 import { Inter } from "next/font/google";
 import { useState } from "react";
-import { Twitter } from "./_components/twitter";
-import { Facebook } from "./_components/facebook";
-import { Instagram } from "./_components/instagram";
+import { Twitter } from "../components/twitter";
+import { Facebook } from "../components/facebook";
+import { Instagram } from "../components/instagram";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import A from "@/pages/_assets/icons/a.png"
-import B from "@/pages/_assets/icons/b.png"
-import C from "@/pages/_assets/icons/c.png"
-import D from "@/pages/_assets/icons/d.png"
-import E from "@/pages/_assets/icons/e.png"
+import A from "@/_assets/icons/a.png"
+import B from "@/_assets/icons/b.png"
+import C from "@/_assets/icons/c.png"
+import D from "@/_assets/icons/d.png"
+import E from "@/_assets/icons/e.png"
 import { StaticImageData } from "next/image";
-import { SnsWrapper } from "./_components/snsWrapper";
-import { FileUploader } from "./_components/fileUploader";
+import { SnsWrapper } from "../components/snsWrapper";
+import { FileUploader } from "../components/fileUploader";
 
 export default function Home() {
   const randomIndex = Math.floor(Math.random() * 5);

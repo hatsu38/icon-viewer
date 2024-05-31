@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Icon } from "./icon";
+import { randomUsername, randomPostText } from "@/pages/_utils/random";
 
 export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
   return (
@@ -12,7 +13,7 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
           </div>
           <div>
             <div className="flex items-center">
-              <span className="font-semibold">disney</span>
+              <span className="font-semibold">{randomUsername}</span>
               <span className="text-gray-500 text-sm">・1日前</span>
             </div>
           </div>
@@ -22,14 +23,14 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
         </div>
         <div className="flex items-center justify-between mb-2">
           <div className="flex space-x-4">
-            <Icon icon="ioHeart" size="1.5rem" />
+            <Icon icon="ioHeartOutline" size="1.5rem" />
             <Icon icon="ioChatboxOutline" size="1.5rem" />
-            <Icon icon="ioSend" size="1.5rem" />
+            <Icon icon="fiSend" size="1.5rem" />
           </div>
           <Icon icon="ioBookmarkOutline" size="1.5rem" />
         </div>
         <p className="mb-1">
-          <span className="font-semibold">disney</span> Up, up, and away! 15 years later, adventure is for Wilderness Explorers of all ages! 🎈🏕 Stream @pixar's Up on... <span className="text-gray-500">続きを読む</span>
+          <span className="font-semibold">{randomUsername}</span>{randomPostText}... <span className="text-gray-500">続きを読む</span>
         </p>
         <p className="text-gray-500 text-sm">いいね！11.1万件</p>
       </div>

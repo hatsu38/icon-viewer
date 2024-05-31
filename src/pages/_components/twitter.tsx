@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Icon } from "./icon";
+import { randomUsername, randomPostText } from "@/pages/_utils/random";
 
 export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
   return (
@@ -13,14 +14,14 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
           <div className="flex-1">
             <div className="flex justify-between items-center">
               <div>
-                <span className="font-semibold">hatsu</span>
-                <span className="text-gray-500 ml-2">@hatsu_38</span>
+                <span className="font-semibold">{randomUsername}</span>
+                <span className="text-gray-500 ml-2">@{randomUsername}</span>
                 <span className="text-gray-500 ml-2">· 15時間</span>
               </div>
               <span className="text-gray-500 text-sm">1h</span>
             </div>
-            <p className="mt-2">
-              This is a sample tweet to show how the uploaded image will look in a Twitter timeline.
+            <p className="mt-2 word-break">
+              {randomPostText}
             </p>
           </div>
         </div>
@@ -37,7 +38,7 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
           </div>
           <div className="flex items-center space-x-2">
             {/* いいね */}
-            <Icon icon="ioHeart" size="1.5rem" />
+            <Icon icon="ioHeartOutline" size="1.5rem" />
             <span>63</span>
           </div>
           <div className="flex items-center space-x-2">

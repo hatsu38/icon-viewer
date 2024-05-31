@@ -11,7 +11,7 @@ import {
   BsFilePlayFill,
   BsFileMusicFill,
 } from "react-icons/bs";
-import { FiBold } from "react-icons/fi";
+import { FiBold, FiSend } from "react-icons/fi";
 import { HiOutlineEyeOff, HiOutlineEye } from "react-icons/hi";
 import { IoIosStats } from "react-icons/io";
 import {
@@ -130,6 +130,7 @@ export const ICONS = [
   "fileVideo",
   "fileText",
   "fiBold",
+  "fiSend",
   "tbLoaderQuarter",
   "riDownloadCloudLine",
   "vscSymbolConstant",
@@ -223,6 +224,7 @@ export const Icon: FC<IconPropsType> = ({
     fileVideo: <BsFilePlayFill {...iconProps} />,
     fileText: <BsFileTextFill {...iconProps} />,
     fiBold: <FiBold {...iconProps} />,
+    fiSend: <FiSend {...iconProps} />,
     tbLoaderQuarter: <TbLoaderQuarter {...iconProps} />,
     riDownloadCloudLine: <RiDownloadCloudLine {...iconProps} />,
     vscSymbolConstant: <VscSymbolConstant {...iconProps} />,

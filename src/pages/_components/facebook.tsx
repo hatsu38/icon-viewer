@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Icon } from "./icon";
+import { randomUsername, randomPostText } from "@/pages/_utils/random";
 
 export const Facebook = ({ imageSrc }: { imageSrc: string }) => {
   return (
@@ -11,21 +12,19 @@ export const Facebook = ({ imageSrc }: { imageSrc: string }) => {
         </div>
         <div className="flex-1">
           <div className="flex flex-col">
-            <span className="font-semibold">小澤 隆生</span>
+            <span className="font-semibold">{randomUsername}</span>
             <div className="flex items-center space-x-2">
               <span className="text-gray-500 text-sm">20時間</span>
               <Icon icon="faEarthAfrica" size="0.8rem" className="text-gray-500" />
             </div>
           </div>
           <p className="mt-2">
-            来週自分の出身中学校、高校で生徒に講演をするんです。90分。
-            中学生、高校生って何を聞きたいんだろと考えていて、みなさんに質問。
-            ・中学生、高校生の頃に知っておきたかったことはなんですか？
-            ・いま、中学生、高校生に戻ったらなにをしますか？… <span className="text-blue-600 cursor-pointer">さらに表示</span>
+            <span className="word-break">{randomPostText}…</span>
+            <span className="text-blue-600 cursor-pointer">さらに表示</span>
           </p>
           <div className="flex justify-between mt-4 text-gray-500">
             <div className="flex items-center space-x-2">
-              <Icon icon="ioHeart" size="1.5rem" />
+              <Icon icon="ioHeartOutline" size="1.5rem" />
               <span>327人</span>
             </div>
             <div className="flex items-center space-x-2">

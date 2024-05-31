@@ -67,6 +67,7 @@ import { TbLoaderQuarter } from "react-icons/tb";
 import { VscSymbolConstant } from "react-icons/vsc";
 import { FaRetweet, FaEarthAfrica } from "react-icons/fa6";
 import { PiDotsThree } from "react-icons/pi";
+import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 export const ICONS = [
   "aiFillStar",
   "aiOutlineLike",
@@ -138,6 +139,8 @@ export const ICONS = [
   "faRetweet",
   "faEarthAfrica",
   "piDotsThree",
+  "mdDarkMode",
+  "mdOutlineLightMode",
 ] as const satisfies readonly string[];
 
 export type IconType = (typeof ICONS)[number];
@@ -233,6 +236,8 @@ export const Icon: FC<IconPropsType> = ({
     faRetweet: <FaRetweet {...iconProps} />,
     faEarthAfrica: <FaEarthAfrica {...iconProps} />,
     piDotsThree: <PiDotsThree {...iconProps} />,
+    mdDarkMode: <MdDarkMode {...iconProps} />,
+    mdOutlineLightMode: <MdOutlineLightMode {...iconProps} />,
   };
 
   return icons[icon];

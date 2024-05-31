@@ -20,13 +20,22 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    if (storedDarkMode) {
+      setIsDarkMode(storedDarkMode === "true");
+    }
+
     const images = [A, B, C, D, E];
     const randomIndex = Math.floor(Math.random() * images.length);
     setImageSrc(images[randomIndex].src);
   }, []);
 
   const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => !prevMode);
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("darkMode", newMode.toString());
+      return newMode;
+    });
   };
 
   return (
@@ -37,7 +46,7 @@ export default function Home() {
         <div className="flex flex-col items-center w-full">
           <button
             onClick={toggleDarkMode}
-            className={`fixed top-4 right-4 p-2rounded-md ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'} dark:bg-gray-800 dark:text-white`}
+            className={`fixed top-4 right-4 p-2 rounded-md ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'} dark:bg-gray-800 dark:text-white`}
           >
             <Icon icon={isDarkMode ? "mdDarkMode" : "mdOutlineLightMode"} size="1.5rem" />
           </button>

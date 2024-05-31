@@ -1,0 +1,14 @@
+{
+  "uploadPrompt": "クリックしてアップロードするか、ドラッグ＆ドロップしてください",
+  "uploadHint": "PNG, JPG, GIF 最大10MB",
+  "crop": "トリミング",
+  "saveImage": "画像を保存",
+  "cropImage": "画像をトリミング",
+  "cancel": "キャンセル",
+  "applyCrop": "トリミングを適用",
+  "seeMore": "さらに表示",
+  "like": "いいね！",
+  "comment": "コメントする",
+  "share": "シェア",
+  "hours": "時間前"
+}

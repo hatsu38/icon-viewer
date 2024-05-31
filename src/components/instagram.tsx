@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Icon } from "./icon";
 import { randomUsername, randomPostText, randomInt } from "@/utils/random";
+import { useTranslation } from 'next-i18next';
 
 export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
+  const { t } = useTranslation('common');
   const name = randomUsername();
   const postText = randomPostText();
   const like = randomInt();
@@ -16,7 +18,7 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
         <div>
           <div className="flex items-center">
             <span className="font-semibold">{name}</span>
-            <span className="text-gray-500 dark:text-gray-400 text-sm">・1日前</span>
+            <span className="text-gray-500 dark:text-gray-400 text-sm">・15 {t("hours")}</span>
           </div>
         </div>
       </div>
@@ -32,9 +34,9 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
         <Icon icon="ioBookmarkOutline" size="1.5rem" />
       </div>
       <p className="mb-1">
-        <span className="font-semibold mr-2">{name}</span>{postText}... <span className="text-blue-600 dark:text-blue-400">続きを読む</span>
+        <span className="font-semibold mr-2">{name}</span>{postText}... <span className="text-blue-600 dark:text-blue-400">{t("seeMore")}</span>
       </p>
-      <p className="text-gray-500 dark:text-gray-400 text-sm">いいね！{like}件</p>
+      <p className="text-gray-500 dark:text-gray-400 text-sm">{t("like")}{like}</p>
     </div>
   );
 };

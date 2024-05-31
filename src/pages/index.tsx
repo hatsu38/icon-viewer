@@ -21,22 +21,12 @@ export default function Home() {
   const defaultImageSrc = [A, B, C, D, E][randomIndex];
   const [imageSrc, setImageSrc] = useState<string | StaticImageData>(defaultImageSrc);
 
-  const handleFileChange = (file: File | null) => {
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImageSrc(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
       <div className="flex flex-col items-center">
-        <FileUploader onFileChange={handleFileChange} className="mb-4" />
+        <FileUploader onFileSrcChange={(src) => setImageSrc(src as string)} className="mb-4" />
         {imageSrc && (
           <div className="flex items-start space-x-8">
             <div className="flex flex-col items-center">

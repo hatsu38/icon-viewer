@@ -65,7 +65,13 @@ export default function Home() {
             <Icon icon={isDarkMode ? "mdDarkMode" : "mdOutlineLightMode"} size="1.5rem" />
           </button>
           <h1 className="text-2xl sm:text-3xl font-bold mb-4">SNS Icon Viewer</h1>
-          <FileUploader imageSrc={imageSrc} originalImageSrc={originalImageSrc} onFileSrcChange={(src) => setImageSrc(src as string)} className="mb-4" />
+          <FileUploader
+            imageSrc={imageSrc}
+            originalImageSrc={originalImageSrc}
+            setOriginalImageSrc={(src) => setOriginalImageSrc(src as string)}
+            onFileSrcChange={(src) => setImageSrc(src as string)}
+            className="mb-4"
+          />
           {imageSrc && (
             <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-8">
               <div className="flex flex-col items-center">

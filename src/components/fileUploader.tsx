@@ -10,13 +10,14 @@ import * as Slider from '@radix-ui/react-slider';
 type FileUploadPropsType = {
   imageSrc: string;
   originalImageSrc: string;
+  setOriginalImageSrc: (string: String) => void;
   onFileSrcChange: (string: String) => void;
   className?: string;
 };
 
 Modal.setAppElement("#__next"); // Next.jsの特定の要素をモーダルのルート要素に設定
 
-export const FileUploader = ({ originalImageSrc, imageSrc, onFileSrcChange, className }: FileUploadPropsType) => {
+export const FileUploader = ({ originalImageSrc, imageSrc, setOriginalImageSrc, onFileSrcChange, className }: FileUploadPropsType) => {
   const { t } = useTranslation('common');
   const [cropData, setCropData] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,6 +37,7 @@ export const FileUploader = ({ originalImageSrc, imageSrc, onFileSrcChange, clas
     reader.onloadend = () => {
       const src = reader.result as string;
       onFileSrcChange(src);
+      setOriginalImageSrc(src);
       setCropData(null);
       setZoomValue([1]);
     };

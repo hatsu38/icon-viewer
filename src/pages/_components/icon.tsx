@@ -66,7 +66,8 @@ import {
 import { RiDownloadCloudLine } from "react-icons/ri";
 import { TbLoaderQuarter } from "react-icons/tb";
 import { VscSymbolConstant } from "react-icons/vsc";
-import { FaRetweet } from "react-icons/fa6";
+import { FaRetweet, FaEarthAfrica } from "react-icons/fa6";
+import { PiDotsThree } from "react-icons/pi";
 export const ICONS = [
   "ioStats",
   "ioHome",
@@ -133,6 +134,8 @@ export const ICONS = [
   "riDownloadCloudLine",
   "vscSymbolConstant",
   "faRetweet",
+  "faEarthAfrica",
+  "piDotsThree",
 ] as const satisfies readonly string[];
 
 export type IconType = (typeof ICONS)[number];
@@ -224,6 +227,8 @@ export const Icon: FC<IconPropsType> = ({
     riDownloadCloudLine: <RiDownloadCloudLine {...iconProps} />,
     vscSymbolConstant: <VscSymbolConstant {...iconProps} />,
     faRetweet: <FaRetweet {...iconProps} />,
+    faEarthAfrica: <FaEarthAfrica {...iconProps} />,
+    piDotsThree: <PiDotsThree {...iconProps} />,
   };
 
   return icons[icon];

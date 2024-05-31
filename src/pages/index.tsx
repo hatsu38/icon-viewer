@@ -12,6 +12,7 @@ import C from "@/pages/_assets/icons/c.png"
 import D from "@/pages/_assets/icons/d.png"
 import E from "@/pages/_assets/icons/e.png"
 import { StaticImageData } from "next/image";
+import { SnsWrapper } from "./_components/snsWrapper";
 
 export default function Home() {
   const randomIndex = Math.floor(Math.random() * 5);
@@ -38,12 +39,27 @@ export default function Home() {
         <input type="file" accept="image/*" onChange={handleFileChange} className="mb-4" />
         {imageSrc && (
           <div className="flex items-start space-x-8">
-            {/* Twitter Preview */}
-            <Twitter imageSrc={imageSrc as string} />
-            {/* Facebook Preview */}
-            <Facebook imageSrc={imageSrc as string} />
-            {/* Instagram Preview */}
-            <Instagram imageSrc={imageSrc as string} />
+            <div className="flex flex-col items-center">
+              <SnsWrapper sns="twitter">
+                {Array.from({ length: 7 }).map((_, index) => (
+                  <Twitter key={index} imageSrc={imageSrc as string} />
+                ))}
+              </SnsWrapper>
+            </div>
+            <div className="flex flex-col items-center">
+              <SnsWrapper sns="facebook">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Facebook key={index} imageSrc={imageSrc as string} />
+                ))}
+              </SnsWrapper>
+            </div>
+            <div className="flex flex-col items-center">
+              <SnsWrapper sns="instagram">
+                {Array.from({ length: 2 }).map((_, index) => (
+                  <Instagram key={index} imageSrc={imageSrc as string} />
+                ))}
+              </SnsWrapper>
+            </div>
           </div>
         )}
       </div>

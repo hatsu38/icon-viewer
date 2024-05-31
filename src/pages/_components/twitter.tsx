@@ -8,8 +8,7 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
   const comment = randomInt();
   const share = randomInt();
   return (
-    <div className="flex flex-col items-center bg-gray-800 border border-gray-700 rounded-lg shadow-md p-4 w-full max-w-md">
-      <h2 className="mb-4 text-xl font-semibold text-blue-500">Twitter</h2>
+    <div>
       <div className="w-full">
         <div className="flex items-start space-x-4">
           <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-700">
@@ -24,12 +23,12 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
               </div>
               <span className="text-gray-500 text-sm">1h</span>
             </div>
-            <p className="mt-2 word-break">
+            <p className="mt-2 word-break truncate-3-lines">
               {postText}
             </p>
           </div>
         </div>
-        <div className="flex justify-between mt-4 text-gray-500">
+        <div className="flex justify-between mt-4 ml-16 text-gray-500">
           <div className="flex items-center space-x-2">
             {/* コメント */}
             <Icon icon="ioChatboxOutline" size="1.5rem" />

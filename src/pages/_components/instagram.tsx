@@ -7,8 +7,7 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
   const postText = randomPostText();
   const like = randomInt();
   return (
-    <div className="flex flex-col items-center bg-black text-white border border-gray-700 rounded-lg shadow-md p-4 w-full max-w-md">
-      <h2 className="mb-4 text-xl font-semibold text-pink-500">Instagram</h2>
+    <div>
       <div className="w-full">
         <div className="flex items-center space-x-4 mb-4">
           <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-700">

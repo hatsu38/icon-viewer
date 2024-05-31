@@ -7,8 +7,7 @@ export const Facebook = ({ imageSrc }: { imageSrc: string }) => {
   const postText = randomPostText();
   const like = randomInt();
   return (
-    <div className="flex flex-col items-center bg-gray-800 border border-gray-700 rounded-lg shadow-md p-4 w-full max-w-md">
-      <h2 className="mb-4 text-xl font-semibold text-blue-600">Facebook</h2>
+    <div>
       <div className="w-full flex items-start space-x-4">
         <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-700">
           <Image src={imageSrc} alt="Facebook Icon" width={48} height={48} />

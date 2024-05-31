@@ -1,19 +1,19 @@
 import Image, { StaticImageData } from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { Icon } from "./icon";
 import Modal from "react-modal";
 
 type FileUploadPropsType = {
-  onFileSrcChange: (string: String | StaticImageData | null) => void;
+  imageSrc: string;
+  onFileSrcChange: (string: String) => void;
   className?: string;
 };
 
 Modal.setAppElement("#__next"); // Next.jsの特定の要素をモーダルのルート要素に設定
 
-export const FileUploader = ({ onFileSrcChange, className }: FileUploadPropsType) => {
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
+export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploadPropsType) => {
   const [cropData, setCropData] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const cropperRef = useRef<HTMLImageElement>(null);
@@ -29,7 +29,6 @@ export const FileUploader = ({ onFileSrcChange, className }: FileUploadPropsType
     const reader = new FileReader();
     reader.onloadend = () => {
       const src = reader.result as string;
-      setImageSrc(src);
       onFileSrcChange(src);
     };
     reader.readAsDataURL(file);
@@ -82,7 +81,11 @@ export const FileUploader = ({ onFileSrcChange, className }: FileUploadPropsType
         <label htmlFor="file-upload" className="cursor-pointer">
           <div className="flex flex-col items-center space-y-2">
             {src ? (
-              <Image src={src} alt="Preview" width={200} height={200} className="rounded object-cover" />
+              <>
+                <Image src={src} alt="Preview" width={200} height={200} className="rounded object-cover" />
+                <span>クリックしてアップロードするか、ドラッグ＆ドロップしてください</span>
+                <span className="text-xs text-gray-500">PNG, JPG, GIF 最大10MB</span>
+              </>
             ) : (
               <>
                 <Icon icon="ioImageOutline" size="2rem" className="text-gray-500" />

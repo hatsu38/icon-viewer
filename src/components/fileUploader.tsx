@@ -1,9 +1,10 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useState, useRef } from "react";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { Icon } from "./icon";
 import Modal from "react-modal";
+import { useTranslation } from 'next-i18next';
 
 type FileUploadPropsType = {
   imageSrc: string;
@@ -14,6 +15,7 @@ type FileUploadPropsType = {
 Modal.setAppElement("#__next"); // Next.jsの特定の要素をモーダルのルート要素に設定
 
 export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploadPropsType) => {
+  const { t } = useTranslation('common');
   const [cropData, setCropData] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const cropperRef = useRef<HTMLImageElement>(null);
@@ -83,14 +85,14 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
           {src ? (
             <>
               <Image src={src} alt="Preview" width={200} height={200} className="rounded object-cover" />
-              <span>クリックしてアップロードするか、ドラッグ＆ドロップしてください</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF 最大10MB</span>
+              <span>{t('uploadPrompt')}</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">{t('uploadHint')}</span>
             </>
           ) : (
             <>
               <Icon icon="ioImageOutline" size="2rem" className="text-gray-500 dark:text-gray-400" />
-              <span>クリックしてアップロードするか、ドラッグ＆ドロップしてください</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF 最大10MB</span>
+              <span>{t('uploadPrompt')}</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">{t('uploadHint')}</span>
             </>
           )}
         </div>
@@ -103,13 +105,13 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
           onClick={() => setIsModalOpen(true)}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-500"
         >
-          トリミング
+          {t('cropImage')}
         </button>
         <button
           onClick={saveCroppedImage}
           className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 dark:bg-green-400 dark:hover:bg-green-500"
         >
-          画像を保存
+          {t('saveImage')}
         </button>
       </div>
     )}
@@ -118,10 +120,10 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
       onRequestClose={() => setIsModalOpen(false)}
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       overlayClassName="fixed inset-0 bg-black bg-opacity-50"
-      contentLabel="画像トリミング"
+      contentLabel={t('cropImage')}
     >
       <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg max-w-lg w-full">
-        <h2 className="text-xl font-semibold mb-4 dark:text-gray-200">画像をトリミング</h2>
+        <h2 className="text-xl font-semibold mb-4 dark:text-gray-200">{t('cropImage')}</h2>
         {imageSrc && (
           <Cropper
             src={imageSrc}
@@ -145,13 +147,13 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
             onClick={() => setIsModalOpen(false)}
             className="mr-2 px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
           >
-            キャンセル
+            {t('cancel')}
           </button>
           <button
             onClick={getCropData}
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-500"
           >
-            トリミングを適用
+            {t('applyCrop')}
           </button>
         </div>
       </div>

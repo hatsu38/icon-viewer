@@ -1,0 +1,16 @@
+{
+  "uploadPrompt": "Click to upload or drag & drop",
+  "uploadHint": "PNG, JPG, GIF up to 10MB",
+  "crop": "Crop",
+  "saveImage": "Save Image",
+  "cropImage": "Crop Image",
+  "cancel": "Cancel",
+  "applyCrop": "Apply Crop",
+  "seeMore": "See More",
+  "like": "Like",
+  "comment": "Comment",
+  "share": "Share",
+  "others": "Others",
+  "items": "Items",
+  "hours": "Hours"
+}

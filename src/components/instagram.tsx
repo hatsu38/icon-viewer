@@ -10,7 +10,7 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
   const like = randomInt();
 
   return (
-    <div className="w-[400px] border-b border-gray-200 dark:border-gray-700 pb-4">
+    <div className="w-[360px] border-b border-gray-200 dark:border-gray-700 pb-4">
       <div className="flex items-center space-x-4 mb-4">
         <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-300 dark:border-gray-700">
           <Image src={imageSrc} alt="Instagram Icon" width={48} height={48} />

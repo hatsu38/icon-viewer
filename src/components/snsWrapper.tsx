@@ -12,8 +12,8 @@ const color = {
 
 export const SnsWrapper = ({ children, sns }: PropsType) => {
   return (
-    <div className="flex flex-col items-center bg-gray-50 dark:bg-gray-800 border dark:border-gray-700 p-4 w-full max-w-md">
-      <h2 className={`mb-4 text-xl font-semibold ${color[sns]}`}>{sns}</h2>
+    <div className="flex flex-col items-center bg-gray-50 dark:bg-gray-800 border dark:border-gray-700 p-4 w-full max-w-md rounded-lg">
+      <h2 className={`mb-4 text-2xl font-semibold letter-spacing-[0.2em] ${color[sns]}`}>{sns}</h2>
       <div className="flex flex-col space-y-4 overflow-hidden">
           {children}
       </div>

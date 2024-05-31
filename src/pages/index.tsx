@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <div className={`${isDarkMode ? 'dark' : ''}`}>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className} bg-white text-gray-700 dark:bg-gray-900 dark:text-white`}
+        className={`flex min-h-screen flex-col items-center justify-between p-4 sm:p-8 lg:p-24 ${inter.className} bg-white text-gray-700 dark:bg-gray-900 dark:text-white`}
       >
         <div className="flex flex-col items-center w-full">
           <button
@@ -62,10 +62,10 @@ export default function Home() {
           >
             <Icon icon={isDarkMode ? "mdDarkMode" : "mdOutlineLightMode"} size="1.5rem" />
           </button>
-          <h1 className="text-3xl font-bold mb-4">SNS Icon Viewer</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-4">SNS Icon Viewer</h1>
           <FileUploader imageSrc={imageSrc} onFileSrcChange={(src) => setImageSrc(src as string)} className="mb-4" />
           {imageSrc && (
-            <div className="flex items-start space-x-8">
+            <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-8">
               <div className="flex flex-col items-center">
                 <SnsWrapper sns="twitter">
                   {Array.from({ length: 7 }).map((_, index) => (

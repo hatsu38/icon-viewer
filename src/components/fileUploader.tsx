@@ -32,6 +32,7 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
     reader.onloadend = () => {
       const src = reader.result as string;
       onFileSrcChange(src);
+      setCropData(null);
     };
     reader.readAsDataURL(file);
   }

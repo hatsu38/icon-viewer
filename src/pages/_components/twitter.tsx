@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Icon } from "./icon";
-import { randomUsername, randomPostText, randomInt } from "@/pages/_utils/random";
+import { randomUsername, randomPostText, randomInt } from "@/_utils/random";
 export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
   const name = randomUsername();
   const postText = randomPostText();

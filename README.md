@@ -1,40 +1,105 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Social Media Icon Preview
 
-## Getting Started
+This is a web application built with Next.js, TypeScript, and Tailwind CSS that allows users to upload an image and preview how it will look as an icon on Twitter, Facebook, and Instagram.
 
-First, run the development server:
+https://icon-viewer.vercel.app
+
+![スクリーンショット 2024-05-31 17 52 24](https://github.com/hatsu38/icon-viewer/assets/16137809/6cbac179-90bf-43c3-9b1c-0ea10ad9391d)
+
+
+## Features
+
+- Upload an image and preview it as an icon on Twitter, Facebook, and Instagram.
+- Crop and zoom the uploaded image for better preview customization.
+- Randomly select a default image from a set of predefined images.
+
+## Installation
+
+To get started with this project, follow these steps:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/social-media-icon-preview.git
+    cd social-media-icon-preview
+    ```
+
+2. **Install dependencies:**
+
+    Make sure you have [Node.js](https://nodejs.org/) installed. Then run:
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+    The application should now be running on [http://localhost:3000](http://localhost:3000).
+
+## Usage
+
+1. Open the application in your web browser.
+2. Click on the file upload area to select an image from your computer or drag and drop an image into the upload area.
+3. Use the cropper tool to adjust the image as needed.
+4. Preview how the image will look as an icon on Twitter, Facebook, and Instagram.
+
+## Components
+
+### FileUpload
+
+The `FileUpload` component allows users to upload an image, which can then be cropped and previewed.
+
+### Twitter
+
+The `Twitter` component displays the uploaded image as it would appear on a Twitter timeline.
+
+### Facebook
+
+The `Facebook` component shows the uploaded image in a Facebook post preview.
+
+### Instagram
+
+The `Instagram` component previews the uploaded image as it would appear on an Instagram profile.
+
+## Meta Tags
+
+This project includes basic meta tags for SEO and social media sharing. These tags are defined in the custom `_document.tsx` file.
+
+## Development
+
+### Adding New Features
+
+If you want to add new features or improve existing ones, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature:
+
+    ```bash
+    git checkout -b feature-name
+    ```
+
+3. Make your changes.
+4. Commit your changes:
+
+    ```bash
+    git commit -m "Add new feature"
+    ```
+
+5. Push to the branch:
+
+    ```bash
+    git push origin feature-name
+    ```
+
+6. Create a pull request on GitHub.
+
+### Running Tests
+
+To run tests, use the following command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+npm run test

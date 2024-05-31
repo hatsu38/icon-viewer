@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineLike } from "react-icons/ai";
 import {
   BsFilePptFill,
   BsFileExcelFill,
@@ -69,6 +68,8 @@ import { VscSymbolConstant } from "react-icons/vsc";
 import { FaRetweet, FaEarthAfrica } from "react-icons/fa6";
 import { PiDotsThree } from "react-icons/pi";
 export const ICONS = [
+  "aiFillStar",
+  "aiOutlineLike",
   "ioStats",
   "ioHome",
   "ioHomeOutline",
@@ -164,6 +165,8 @@ export const Icon: FC<IconPropsType> = ({
   };
 
   const icons = {
+    aiFillStar: <AiFillStar {...iconProps} />,
+    aiOutlineLike: <AiOutlineLike {...iconProps} />,
     ioStats: <IoIosStats {...iconProps} />,
     ioHome: <IoHome {...iconProps} />,
     ioHomeOutline: <IoHomeOutline {...iconProps} />,
@@ -214,7 +217,6 @@ export const Icon: FC<IconPropsType> = ({
     ioVolumeLow: <IoVolumeLow {...iconProps} />,
     hiOutlineEye: <HiOutlineEye {...iconProps} />,
     hiOutlineEyeOff: <HiOutlineEyeOff {...iconProps} />,
-    aiFillStar: <AiFillStar {...iconProps} />,
     fileImage: <BsFileImageFill {...iconProps} />,
     fileExcel: <BsFileExcelFill {...iconProps} />,
     fileWord: <BsFileWordFill {...iconProps} />,

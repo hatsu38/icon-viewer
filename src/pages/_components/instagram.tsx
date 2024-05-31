@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { Icon } from "./icon";
-import { randomUsername, randomPostText } from "@/pages/_utils/random";
+import { randomUsername, randomPostText, randomInt } from "@/pages/_utils/random";
 
 export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
+  const name = randomUsername();
+  const postText = randomPostText();
+  const like = randomInt();
   return (
     <div className="flex flex-col items-center bg-black text-white border border-gray-700 rounded-lg shadow-md p-4 w-full max-w-md">
       <h2 className="mb-4 text-xl font-semibold text-pink-500">Instagram</h2>
@@ -13,7 +16,7 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
           </div>
           <div>
             <div className="flex items-center">
-              <span className="font-semibold">{randomUsername}</span>
+              <span className="font-semibold">{name}</span>
               <span className="text-gray-500 text-sm">・1日前</span>
             </div>
           </div>
@@ -30,9 +33,9 @@ export const Instagram = ({ imageSrc }: { imageSrc: string }) => {
           <Icon icon="ioBookmarkOutline" size="1.5rem" />
         </div>
         <p className="mb-1">
-          <span className="font-semibold">{randomUsername}</span>{randomPostText}... <span className="text-gray-500">続きを読む</span>
+          <span className="font-semibold mr-2">{name}</span>{postText}... <span className="text-gray-500">続きを読む</span>
         </p>
-        <p className="text-gray-500 text-sm">いいね！11.1万件</p>
+        <p className="text-gray-500 text-sm">いいね！{like}件</p>
       </div>
     </div>
   )

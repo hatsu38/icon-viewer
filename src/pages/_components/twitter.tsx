@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { Icon } from "./icon";
-import { randomUsername, randomPostText } from "@/pages/_utils/random";
-
+import { randomUsername, randomPostText, randomInt } from "@/pages/_utils/random";
 export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
+  const name = randomUsername();
+  const postText = randomPostText();
+  const like = randomInt();
+  const comment = randomInt();
+  const share = randomInt();
   return (
     <div className="flex flex-col items-center bg-gray-800 border border-gray-700 rounded-lg shadow-md p-4 w-full max-w-md">
       <h2 className="mb-4 text-xl font-semibold text-blue-500">Twitter</h2>
@@ -14,14 +18,14 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
           <div className="flex-1">
             <div className="flex justify-between items-center">
               <div>
-                <span className="font-semibold">{randomUsername}</span>
-                <span className="text-gray-500 ml-2">@{randomUsername}</span>
+                <span className="font-semibold">{name}</span>
+                <span className="text-gray-500 ml-2">@{name}</span>
                 <span className="text-gray-500 ml-2">· 15時間</span>
               </div>
               <span className="text-gray-500 text-sm">1h</span>
             </div>
             <p className="mt-2 word-break">
-              {randomPostText}
+              {postText}
             </p>
           </div>
         </div>
@@ -29,17 +33,17 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
           <div className="flex items-center space-x-2">
             {/* コメント */}
             <Icon icon="ioChatboxOutline" size="1.5rem" />
-            <span>1</span>
+            <span>{comment}</span>
           </div>
           <div className="flex items-center space-x-2">
             {/* リツイート */}
             <Icon icon="faRetweet" size="1.5rem" />
-            <span>82</span>
+            <span>{share}</span>              
           </div>
           <div className="flex items-center space-x-2">
             {/* いいね */}
             <Icon icon="ioHeartOutline" size="1.5rem" />
-            <span>63</span>
+            <span>{like}</span>
           </div>
           <div className="flex items-center space-x-2">
             {/* 統計 */}

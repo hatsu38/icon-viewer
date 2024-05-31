@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useState } from "react";
 import { Twitter } from "./_components/twitter";
@@ -7,9 +6,18 @@ import { Instagram } from "./_components/instagram";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import A from "@/pages/_assets/icons/a.png"
+import B from "@/pages/_assets/icons/b.png"
+import C from "@/pages/_assets/icons/c.png"
+import D from "@/pages/_assets/icons/d.png"
+import E from "@/pages/_assets/icons/e.png"
+import { StaticImageData } from "next/image";
+
 export default function Home() {
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const randomIndex = Math.floor(Math.random() * 5);
+
+  const defaultImageSrc = [A, B, C, D, E][randomIndex];
+  const [imageSrc, setImageSrc] = useState<string | StaticImageData>(defaultImageSrc);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0] || null;
@@ -20,7 +28,6 @@ export default function Home() {
       };
       reader.readAsDataURL(file);
     }
-    setSelectedFile(file);
   };
 
   return (
@@ -32,11 +39,11 @@ export default function Home() {
         {imageSrc && (
           <div className="flex items-start space-x-8">
             {/* Twitter Preview */}
-            <Twitter imageSrc={imageSrc} />
+            <Twitter imageSrc={imageSrc as string} />
             {/* Facebook Preview */}
-            <Facebook imageSrc={imageSrc} />
+            <Facebook imageSrc={imageSrc as string} />
             {/* Instagram Preview */}
-            <Instagram imageSrc={imageSrc} />
+            <Instagram imageSrc={imageSrc as string} />
           </div>
         )}
       </div>

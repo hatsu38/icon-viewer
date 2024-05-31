@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Icon } from "./icon";
 
 export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
   return (
@@ -25,19 +26,23 @@ export const Twitter = ({ imageSrc }: { imageSrc: string }) => {
         </div>
         <div className="flex justify-between mt-4 text-gray-500">
           <div className="flex items-center space-x-2">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 20.75a8.751 8.751 0 0 1-8.75-8.75h1.5a7.251 7.251 0 1 0 14.5 0h1.5a8.751 8.751 0 0 1-8.75 8.75zm0-17.5a8.751 8.751 0 0 1 8.75 8.75h-1.5a7.251 7.251 0 1 0-14.5 0h-1.5a8.751 8.751 0 0 1 8.75-8.75zm3.03 11.5a.75.75 0 0 1 0 1.5h-6.06a.75.75 0 0 1 0-1.5h6.06z"></path></svg>
+            {/* コメント */}
+            <Icon icon="ioChatboxOutline" size="1.5rem" />
             <span>1</span>
           </div>
           <div className="flex items-center space-x-2">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 20.75a8.751 8.751 0 0 1-8.75-8.75h1.5a7.251 7.251 0 1 0 14.5 0h1.5a8.751 8.751 0 0 1-8.75 8.75zm0-17.5a8.751 8.751 0 0 1 8.75 8.75h-1.5a7.251 7.251 0 1 0-14.5 0h-1.5a8.751 8.751 0 0 1 8.75-8.75zm3.03 11.5a.75.75 0 0 1 0 1.5h-6.06a.75.75 0 0 1 0-1.5h6.06z"></path></svg>
+            {/* リツイート */}
+            <Icon icon="faRetweet" size="1.5rem" />
             <span>82</span>
           </div>
           <div className="flex items-center space-x-2">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 20.75a8.751 8.751 0 0 1-8.75-8.75h1.5a7.251 7.251 0 1 0 14.5 0h1.5a8.751 8.751 0 0 1-8.75 8.75zm0-17.5a8.751 8.751 0 0 1 8.75 8.75h-1.5a7.251 7.251 0 1 0-14.5 0h-1.5a8.751 8.751 0 0 1 8.75-8.75zm3.03 11.5a.75.75 0 0 1 0 1.5h-6.06a.75.75 0 0 1 0-1.5h6.06z"></path></svg>
+            {/* いいね */}
+            <Icon icon="ioHeart" size="1.5rem" />
             <span>63</span>
           </div>
           <div className="flex items-center space-x-2">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 20.75a8.751 8.751 0 0 1-8.75-8.75h1.5a7.251 7.251 0 1 0 14.5 0h1.5a8.751 8.751 0 0 1-8.75 8.75zm0-17.5a8.751 8.751 0 0 1 8.75 8.75h-1.5a7.251 7.251 0 1 0-14.5 0h-1.5a8.751 8.751 0 0 1-8.75-8.75zm3.03 11.5a.75.75 0 0 1 0 1.5h-6.06a.75.75 0 0 1 0-1.5h6.06z"></path></svg>
+            {/* 統計 */}
+            <Icon icon="ioStats" size="1.5rem" />
           </div>
         </div>
       </div>

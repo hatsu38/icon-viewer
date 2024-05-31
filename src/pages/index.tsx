@@ -13,6 +13,7 @@ import D from "@/pages/_assets/icons/d.png"
 import E from "@/pages/_assets/icons/e.png"
 import { StaticImageData } from "next/image";
 import { SnsWrapper } from "./_components/snsWrapper";
+import { FileUploader } from "./_components/fileUploader";
 
 export default function Home() {
   const randomIndex = Math.floor(Math.random() * 5);
@@ -20,8 +21,7 @@ export default function Home() {
   const defaultImageSrc = [A, B, C, D, E][randomIndex];
   const [imageSrc, setImageSrc] = useState<string | StaticImageData>(defaultImageSrc);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0] || null;
+  const handleFileChange = (file: File | null) => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -36,7 +36,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
       <div className="flex flex-col items-center">
-        <input type="file" accept="image/*" onChange={handleFileChange} className="mb-4" />
+        <FileUploader onFileChange={handleFileChange} className="mb-4" />
         {imageSrc && (
           <div className="flex items-start space-x-8">
             <div className="flex flex-col items-center">

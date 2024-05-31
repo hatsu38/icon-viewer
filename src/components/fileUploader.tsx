@@ -9,13 +9,14 @@ import * as Slider from '@radix-ui/react-slider';
 
 type FileUploadPropsType = {
   imageSrc: string;
+  originalImageSrc: string;
   onFileSrcChange: (string: String) => void;
   className?: string;
 };
 
 Modal.setAppElement("#__next"); // Next.jsの特定の要素をモーダルのルート要素に設定
 
-export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploadPropsType) => {
+export const FileUploader = ({ originalImageSrc, imageSrc, onFileSrcChange, className }: FileUploadPropsType) => {
   const { t } = useTranslation('common');
   const [cropData, setCropData] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,6 +37,7 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
       const src = reader.result as string;
       onFileSrcChange(src);
       setCropData(null);
+      setZoomValue([1]);
     };
     reader.readAsDataURL(file);
   };
@@ -80,7 +82,7 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
   const handleReady = () => {
     if (cropperRef.current && (cropperRef.current as any).cropper) {
       (cropperRef.current as any).cropper.zoomTo(0);
-      setZoomValue([0]);
+      setZoomValue([1]);
     }
   };
 
@@ -146,7 +148,7 @@ export const FileUploader = ({ imageSrc, onFileSrcChange, className }: FileUploa
           {imageSrc && (
             <div>
               <Cropper
-                src={imageSrc}
+                src={originalImageSrc}
                 initialAspectRatio={1}
                 guides={false}
                 scalable

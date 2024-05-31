@@ -29,6 +29,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState<string>("");
+  const [originalImageSrc, setOriginalImageSrc] = useState<string>("");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function Home() {
     const images = [A, B, C, D, E];
     const randomIndex = Math.floor(Math.random() * images.length);
     setImageSrc(images[randomIndex].src);
+    setOriginalImageSrc(images[randomIndex].src);
   }, []);
 
   const toggleDarkMode = () => {
@@ -63,7 +65,7 @@ export default function Home() {
             <Icon icon={isDarkMode ? "mdDarkMode" : "mdOutlineLightMode"} size="1.5rem" />
           </button>
           <h1 className="text-2xl sm:text-3xl font-bold mb-4">SNS Icon Viewer</h1>
-          <FileUploader imageSrc={imageSrc} onFileSrcChange={(src) => setImageSrc(src as string)} className="mb-4" />
+          <FileUploader imageSrc={imageSrc} originalImageSrc={originalImageSrc} onFileSrcChange={(src) => setImageSrc(src as string)} className="mb-4" />
           {imageSrc && (
             <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-8">
               <div className="flex flex-col items-center">

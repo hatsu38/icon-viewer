@@ -6,11 +6,11 @@ import { Instagram } from "../components/instagram";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import A from "@/assets/icons/a.png";
-import B from "@/assets/icons/b.png";
-import C from "@/assets/icons/c.png";
-import D from "@/assets/icons/d.png";
-import E from "@/assets/icons/e.png";
+import A from "@/pages/assets/icons/a.png";
+import B from "@/pages/assets/icons/b.png";
+import C from "@/pages/assets/icons/c.png";
+import D from "@/pages/assets/icons/d.png";
+import E from "@/pages/assets/icons/e.png";
 import { SnsWrapper } from "../components/snsWrapper";
 import { FileUploader } from "../components/fileUploader";
 import { Icon } from "@/components/icon";
